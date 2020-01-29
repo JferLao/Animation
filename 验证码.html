@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.s-canvas {
+				width: 100%;
+				height: 46px;
+				/* background: black; */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="s-canvas">
+			<canvas id="s-canvas"></canvas>
+		</div>
+		<script type="text/javascript">
+			
+			let identifyCode = '1234' //初始化验证码数字
+			let identifyCodes = '0123456789abcdefghijklmnopqrstuvwxyz' //全部数字
+			let fontSizeMin = 16 //设置最小字号
+			let fontSizeMax = 40 //设置最大字号
+			let backgroundColorMin = 180 //背景色的最小值
+			let backgroundColorMax = 240 //设置背景色的最大值
+			let colorMin = 50 //设置字体颜色色号最小值
+			let colorMax = 160 //设置字体颜色色号最大值
+			let lineColorMin = 40 //设置干扰横线颜色最小值
+			let lineColorMax = 180 //设置干扰横线颜色最大值
+			let dotColorMin = 0 //设置干扰点颜色的最小值
+			let dotColorMax = 255 //设置干扰点颜色的最大值
+			let contenWidth = 145 //设置容器的宽度
+			let contentHeight = 46 //设置容器的高度
+
+
+			// 生成一个随机数
+			function randomNum(min, max) {
+				return Math.floor(Math.random() * (max - min) + min)
+			}
+			// 生成一个随机颜色
+			function randomColor(min, max) {
+				let r = randomNum(min, max)
+				let g = randomNum(min, max)
+				let b = randomNum(min, max)
+				return "rgb(" + r + "," + g + "," + b + ")";
+			}
+			// 绘制字体
+			function drawText(ctx, txt, i) {
+				ctx.fillStyle = randomColor(colorMin.colorMax)
+				ctx.font = randomNum(fontSizeMin, fontSizeMax) + "px SimHei"
+				let x = (i + 1) * (contenWidth / (identifyCode.length + 1))
+				let y = randomNum(fontSizeMax, contentHeight - 5)
+				let deg = randomNum(-45, 45)
+				// 修改坐标原点和旋转角度
+				console.log(x, y);
+				ctx.translate(x, y)
+				ctx.rotate((deg * Math.PI) / 180)
+				ctx.fillText(txt, 0, 0)
+				// 恢复坐标原点和旋转角度
+				ctx.rotate((-deg * Math.PI) / 180);
+				ctx.translate(-x, -y);
+
+			}
+
+			function drawLine(ctx) {
+				// 绘制干扰线
+				for (let i = 0; i < 8; i++) {
+					ctx.strokeStyle = randomColor(
+						lineColorMin,
+						lineColorMax
+					);
+					ctx.beginPath();
+					ctx.moveTo(
+						randomNum(0, contenWidth),
+						randomNum(0, contentHeight)
+					);
+					ctx.lineTo(
+						randomNum(0, contenWidth),
+						randomNum(0, contentHeight)
+					);
+					ctx.stroke();
+				}
+			}
+
+			function drawDot(ctx) {
+				// 绘制干扰点
+				for (let i = 0; i < 100; i++) {
+					ctx.fillStyle = randomColor(0, 255);
+					ctx.beginPath();
+					ctx.arc(
+						randomNum(0, contenWidth),
+						randomNum(0, contentHeight),
+						1,
+						0,
+						2 * Math.PI
+					);
+					ctx.fill();
+				}
+			}
+			// 绘图
+			function drawpic() {
+				let canvas = document.getElementById("s-canvas");
+				let ctx = canvas.getContext("2d")
+				ctx.textBaseline = 'bottom'
+				// 绘制背景
+				ctx.fillStyle = randomColor(backgroundColorMin, backgroundColorMax)
+				// ctx.fillRect(0, 0, contenWidth, contentHeight)
+				// 绘制文字
+				for (let i = 0; i < identifyCode.length; i++) {
+					drawText(ctx, identifyCode[i], i)
+				}
+				drawLine(ctx)
+				drawDot(ctx)
+			}
+
+			function refresh() {
+				identifyCode = ''
+				for (let i = 0; i < 4; i++) {
+					identifyCode +=identifyCodes[randomNum(0,identifyCodes.length)]
+					console.log(identifyCode);
+				}
+				console.log(identifyCode);
+				drawpic()
+			}
+
+			// function MakeCode(o, num) {
+			// 	for (let i = 0; i < num.length; i++) {
+			// 		identifyCode +=identifyCodes[randomNum(0,identifyCodes.length)]
+			// 		console.log(identifyCode);
+			// 	}
+			// }
+			// console.log(identifyCode);
+			refresh()
+
+		</script>
+	</body>
+</html>
