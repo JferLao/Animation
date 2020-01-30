@@ -8,3 +8,5 @@
 [验证码效果](https://github.com/JferLao/Animation/blob/master/%E9%AA%8C%E8%AF%81%E7%A0%81.html)
 
 [云彩动画效果](https://github.com/JferLao/Animation/blob/master/cloud.html)
+
+[小球摆动加载效果](https://github.com/JferLao/Animation/blob/master/ballSwing.html)
