@@ -14,3 +14,5 @@
 [喇叭播放效果](https://github.com/JferLao/Animation/blob/master/horn.html)
 
 [笑脸评分效果](https://github.com/JferLao/Animation/blob/master/score.html)
+
+[小球开关](https://github.com/JferLao/Animation/blob/master/ballSwitch.html)
