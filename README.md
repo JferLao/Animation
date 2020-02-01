@@ -10,3 +10,5 @@
 [云彩动画效果](https://github.com/JferLao/Animation/blob/master/cloud.html)
 
 [小球摆动加载效果](https://github.com/JferLao/Animation/blob/master/ballSwing.html)
+
+[喇叭播放效果](https://github.com/JferLao/Animation/blob/master/horn.html)
