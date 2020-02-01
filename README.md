@@ -12,3 +12,5 @@
 [小球摆动加载效果](https://github.com/JferLao/Animation/blob/master/ballSwing.html)
 
 [喇叭播放效果](https://github.com/JferLao/Animation/blob/master/horn.html)
+
+[笑脸评分效果](https://github.com/JferLao/Animation/blob/master/score.html)
