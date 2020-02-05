@@ -20,3 +20,5 @@
 [预载旋转圈](https://github.com/JferLao/Animation/blob/master/preLoading1.html)
 
 [预载跳动圈](https://github.com/JferLao/Animation/blob/master/preLoading2.html)
+
+[预载交错圈](https://github.com/JferLao/Animation/blob/master/preLoading3html)
