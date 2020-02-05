@@ -18,3 +18,5 @@
 [小球开关](https://github.com/JferLao/Animation/blob/master/ballSwitch.html)
 
 [预载旋转圈](https://github.com/JferLao/Animation/blob/master/preLoading1.html)
+
+[预载跳动圈](https://github.com/JferLao/Animation/blob/master/preLoading2.html)
