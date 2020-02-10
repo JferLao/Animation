@@ -22,3 +22,5 @@
 [预载跳动圈](https://github.com/JferLao/Animation/blob/master/preLoading2.html)
 
 [预载交错圈](https://github.com/JferLao/Animation/blob/master/preLoading3html)
+
+[动态粒子效果背景](https://github.com/JferLao/Animation/blob/master/%E5%8A%A8%E6%80%81%E7%B2%92%E5%AD%90%E6%95%88%E6%9E%9C%E8%83%8C%E6%99%AF.html)
